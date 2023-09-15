@@ -10,3 +10,5 @@ venv
 .vscode
 notes.txt
 notes
+media/
+venv/
