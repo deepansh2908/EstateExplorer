@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Font Awesome -->
+        <!-- the href tag will look into the static folder and find all.css file there. Note that we are using the django template language here -->
+        <link rel="stylesheet" href="{% static 'css/all.css' %}" />
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+        <!-- Custom -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <!-- Lightbox -->
+        <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}" />
+        <!-- this is -->
+        <title>Estate Explorer{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <!-- bringing Topbar from partials folder -->
+        {% include 'partials/_topbar.html' %}
+        
+        <!-- bringing Navbar from partials folder -->
+        {% include 'partials/_navbar.html' %}
+
+        {% block content %} {% endblock %}
+
+        <!-- bringing footer from partials folder -->
+        {% include 'partials/_footer.html' %}
+
+        <!-- the src tag points to the static folder and points to the relevant files -->
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/lightbox.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>
